@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# DM-Helper
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DM Helper is a program written for Dungeon Masters using React.
+The main feature lets you roll multiples of dice at the same time and 
+easily viewing the results and various attributes of said results.
+DM Helper Also helps Dungeon Masters with a Note taking feature. 
+Sectioned notes allow the user to save, read,
+easily access, and change stored data. Users can press Ctrl + F
+to use select browsers search feature and find notes faster.
 
-## Available Scripts
+## To Run
 
-In the project directory, you can run:
+Install Node.js
 
-### `npm start`
+Windows: Run Install.bat and then users can run the program anytime with Start.bat. MacOS users navigate to the DM-Helper build folder in terminal and run <code>npm install serve</code> then users only need to write <code>serve -s build</code> anytime to run the program, then type the given url into an internet browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run the devolopment version on MacOS/Windows open a terminal/powershell and navigate the main project folder and run <code>npm i</code> then Windows users can just run the startDev.bat file and on MacOS users only need to run <code>npm run start</code>. After this if users wish to run the development version again they only need to run startDev.bat on Windows and <code>npm run start</code> on MacOS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## To use
 
-### `npm test`
+# Rolling mechanic
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Select a dice from the six dice.
+2. A menu will appear under the title, enter how many times the dice should be rolled
+   in the field left of the 'Roll' Button.
+3. Click the 'Roll' button.<br>
+![image](https://user-images.githubusercontent.com/101236440/191092679-2101038c-28de-4832-92e6-ff746244ea9a.png)
+4. In the center of the screen the dark read area hold the results of each roll. Above that is the
+    Dice buttons and when clicked allow users to roll more dice. Below the roll display area are several listed
+    filtering options. **'Total Rolls'** list how many times the dice were rolled, **'Added Rolls'** adds all the results
+    together and list the total sum, **'Criticals'** is how many times the highest number was rolled for the selected dice,
+    **'Critical1s'** is how many times a number 1 was rolled for the selected dice, **'Sort By Higher'** and **'Sort By Lower'**
+    are both buttons that when clicked sort the results in the display area. **'How many roll are above/below: __ There Are:'**
+    when a number is entered into the black field the filter option list how many roll results were above/below the entered
+    number.
+5. The **'Go Back'** button takes the user to the main page.
+ 
+# Notes mechanic
+ 
+1. On the main page and the roll results page there is a button named 'Notes' when this
+    button is clicked, user will be taken to the notes page. <br>
+    ![image](https://user-images.githubusercontent.com/101236440/191094766-ae85e067-5e8c-42f4-ae91-e66504032316.png)
+2. Under the title there are 3 sections, **'Spells'**, **'Items'**, and **'Misc'** respectively. When any of these are clicked the
+    header above the note display will change depending on which section was clicked.
+3. Under the note display area there are 2 buttons **'Add'** and **'Go Back'**. When add is clicked a form appears above it where
+    users may input text in the black text area and save the input by clicking the **'Save at #'** button. The # is the number entry
+    the note will save to.
+4. To edit or delete a note users can click on a note in the display area and 2 buttons will appear under the display area listed
+    as **'Edit:#'** and **'Delete:#'**. The Edit button will open the add form to input new text and save to the number selected, which is
+    stated in the **'Save at #'** button. The Delete button will permantely remove the note and the next saved note will replace its place.
+    WARNING: Highly recomended users Edit whenever they can instead of deleting a note.
+5. To unselect a note the note must be clicked again twice.
+ 
+# About
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This program was made by Caleb Harris using React. 
