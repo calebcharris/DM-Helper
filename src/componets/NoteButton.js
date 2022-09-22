@@ -1,7 +1,7 @@
 const NoteButton = () => {
     //This button takes users to the Notes page.
     return (
-        <a href='/Notes'>
+        <a href='/DM-Helper/Notes'>
             <div className="button" id="note-button">
                 <div id="slide"></div>
                 <button>Notes</button>

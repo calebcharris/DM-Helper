@@ -10,7 +10,7 @@ const About = () => {
             with sectioned notes the user can save and read various notes and
             easily access and change stored data. Users can press Ctrl + F
             to use select browsers search feature and find notes faster.</p>
-            <a href='/'>Go Back</a>
+            <a href='/DM-Helper'>Go Back</a>
         </div>
     )
 }

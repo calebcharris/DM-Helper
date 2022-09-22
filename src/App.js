@@ -34,7 +34,7 @@ const App = () => {
       <div className="container">
         <Header />
           <Routes>
-            <Route path='/' element={
+            <Route path='/DM-Helper' element={
               <> 
                 {
                   showDiceRolls && <RollButton 
@@ -53,7 +53,7 @@ const App = () => {
 
               </>
             }/>
-            <Route path='/RollPage' element={ 
+            <Route path='/DM-Helper/RollPage' element={ 
               <> 
                 {
                   showDiceRolls && <RollButton 
@@ -77,9 +77,9 @@ const App = () => {
               </>
             } />
 
-            <Route path='/About' element={<About />} />
+            <Route path='/DM-Helper/About' element={<About />} />
             
-            <Route path='/Notes' element={<NotePage setDice={setDice}/>} />
+            <Route path='/DM-Helper/Notes' element={<NotePage setDice={setDice}/>} />
           </Routes>
         <Footer />
       </div>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <p>Created by Caleb Harris 2022</p>
-            <Link to='/About'>About</Link>
+            <Link to='/DM-Helper/About'>About</Link>
         </footer>
     )
 }

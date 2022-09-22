@@ -11,7 +11,7 @@ const RollButton = ({ refreshRoll, dice, setDiceRollNumber, diceRollNumber, setR
     const navigate = useNavigate()
 
     const toRollPage = () => {
-        navigate("/rollpage", { replace: true })
+        navigate("/DM-Helper/rollpage", { replace: true })
     }
 
     const rollDice = () => {
