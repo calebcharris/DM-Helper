@@ -1,13 +1,337 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+html {
+  background-color: black;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Playfair Display SC';
+}
+
+
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header {
+  border-bottom: 1px solid #8b0000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 500px;
+  border: 3px solid #8b0000;
+  padding: 30px;
+  min-width: 300px;
+}
+
+.D20 { grid-area: D20 }
+.D12 { grid-area: D12 }
+.D10 { grid-area: D10 }
+.D8 { grid-area: D8 }
+.D6 { grid-area: D6 }
+.D4 { grid-area: D4 }
+
+.dice {
+  display: grid;
+  grid-template-areas: 
+    'D20 D12'
+    'D10 D8'
+    'D6 D4';
+  background-color: #400000;
+}
+
+.dice div {
+  height: 200px;
+}
+
+.roll-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  display: inline-flex;
+  height: 62px;
+  width: 63px;
+  border: 2px solid #8b0000;
+  margin: 5px;
+  color: #8b0000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#back-button, #note-button, #add-button, #save-button, #edit-button, #delete-button {
+  height: 50px;
+  width: 200px;
+  align-self: center;
+  margin: 10px;
+}
+
+#D20, #D12, #D10, #D8, #D6, #D4, #back-button, #roll-button, #note-button, #right-button, #left-button, #center-button, #add-button, #save-button, #edit-button, #delete-button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#D20 button, #D12 button, #D10 button, #D8 button, #D6 button, #D4 button, #back-button button, #roll-button button, #note-button button, #right-button button, #left-button button, #center-button button, #add-button button, #save-button button, #edit-button button, #delete-button button {
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: #8b0000;
+  position: absolute;
+  transition: all .35s ease-Out;
+  bottom: 0;
+  cursor: pointer;
+}
+
+#D20:hover #slide, #D12:hover #slide, #D10:hover #slide, #D8:hover #slide, #D6:hover #slide, #D4:hover #slide, #back-button:hover #slide, #roll-button:hover #slide, #note-button:hover #slide, #right-button:hover #slide, #left-button:hover #slide, #center-button:hover #slide, #add-button:hover #slide, #save-button:hover #slide, #edit-button:hover #slide, #delete-button:hover #slide {
+  left: 0;
+}
+
+#D20:hover button, #D12:hover button, #D10:hover button, #D8:hover button, #D6:hover button, #D4:hover button, #back-button:hover button, #roll-button:hover button, #note-button:hover button, #right-button:hover button, #left-button:hover button, #center-button:hover button, #add-button:hover button, #save-button:hover button, #edit-button:hover button, #delete-button:hover button {
+  color: white;
+}
+
+button {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  background: transparent;
+  border: none;
+  font-family: 'Playfair Display SC';
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+#AllDice20 {
+  background: url(Dice\ Imgs/D20.png);
+}
+
+#AllDice12 {
+  background: url(Dice\ Imgs/D12.png);
+}
+
+#AllDice10 {
+  background: url(Dice\ Imgs/D10.png);
+}
+
+#AllDice8 {
+  background: url(Dice\ Imgs/D8.png);
+}
+
+#AllDice6 {
+  background: url(Dice\ Imgs/D6.png);
+}
+
+#AllDice4 {
+  background: url(Dice\ Imgs/D4.png);
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+#D20 {
+  margin-left: 0;
+}
+
+#D4 {
+  margin-right: 0;
+}
+
+.roll-results {
+  background-color: #400000;
+  height: 500px;
+  width: 100%;
+  border: solid 2px #8b0000;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  overflow: auto;
+  justify-items: center;
+}
+
+.roll-results div {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.filter-option-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 49% 48%;
+  grid-gap: 10px;
+  justify-content: center;
+}
+.filter-option-container div, .filter-option-container button {
+  background-color: #400000;
+  border: 2px solid #8b0000;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+#inputAbove, #inputBelow, #input-form  {
+  width: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #8b0000;
+  background-color: black;
+  color: white;
+}
+
+.dice-header {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: 49% 48%;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.instruction {
+  grid-row: 1/2;
+  grid-column: span 2;
+  justify-self: center;
+}
+
+.input-rolls {
+  height: 30px;
+  width: 50px;
+  grid-row: 2/2;
+  grid-column: 1/2;
+  justify-self: right;
+}
+
+#submit-button {
+  grid-row: 2/2;
+  grid-row: 2/2;
+  justify-self: left;
+}
+
+.note-display {
+  background-color: #400000;
+  height: 500px;
+  width: 100%;
+  border: solid 2px #8b0000;
+  border-radius: 2px;
+  overflow: auto;
+}
+
+.note-display div {
+  cursor: pointer;
+}
+
+.note-buttons {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-buttons div {
+  width: 125px;
+}
+
+.note-footer {
+  display: grid;
+  grid-template-columns: 49% 48%;
+  grid-template-rows: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  .note-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .note-footer a {
+    align-self: center;
+  }
+}
+
+.note-footer a {
+  width: 220px;
+}
+
+.note-head {
+  display: flex;
+}
+
+#Spells {
+  justify-content: left;
+}
+
+#Items {
+  justify-content: center;
+}
+
+#Misc {
+  justify-content: right;
+}
+
+#input-form {
+  width: 100%;
+  height: 100px;
+  overflow: auto;
+  writing-mode: horizontal-tb;
+  text-align: start;
+  resize: none;
+  align-self: center;
+}
+
+.form-details {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  background-color: #400000;
+  padding: 15px;
+  border: 2px solid #8b0000;
+}
+
+.note-display div:hover {
+  background-color: black;
 }

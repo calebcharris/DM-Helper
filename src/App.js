@@ -1,25 +1,90 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Header from './componets/Header'
+import Footer from './componets/Footer'
+import About from './componets/About'
+import AllDice from './componets/AllDice'
+import RollPage from './componets/RollPage'
+import RollButton from './componets/RollButton'
+import NoteButton from './componets/NoteButton'
+import NotePage from './componets/NotePage'
 
-function App() {
+const App = () => {
+  const [showDiceRolls, setShowDiceRolls] = useState(false)
+  const [dice, setDice] = useState('')
+  const [diceRollNumber, setDiceRollNumber] = useState('')
+  const [rolls, setRolls] = useState([])
+
+  const onClick = (e) => {
+      // When a dice is clicked it sets the dice value to the dice state 
+      // and displays the roll dice form.
+      e.preventDefault()
+      setDice(e.target.value)
+      setShowDiceRolls(true)
+  }
+
+  const refreshSubmitButton = () => {
+    //  when another dice is selected after selecting one this makes the rollbutton
+    //  form leave.
+    setShowDiceRolls(false)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="container">
+        <Header />
+          <Routes>
+            <Route path='/' element={
+              <> 
+                {
+                  showDiceRolls && <RollButton 
+                  refreshRoll={refreshSubmitButton} 
+                  dice={dice}
+                  setDiceRollNumber={setDiceRollNumber}
+                  diceRollNumber={diceRollNumber}
+                  setRolls={setRolls}/>
+                } 
+
+                <AllDice 
+                  onClick={onClick} 
+                />
+
+                <NoteButton />
+
+              </>
+            }/>
+            <Route path='/RollPage' element={ 
+              <> 
+                {
+                  showDiceRolls && <RollButton 
+                  refreshRoll={refreshSubmitButton} 
+                  dice={dice}
+                  setDiceRollNumber={setDiceRollNumber}
+                  diceRollNumber={diceRollNumber}
+                  setRolls={setRolls}/>
+                } 
+
+                <RollPage 
+                  onClick={onClick}
+                  diceRollNumber={diceRollNumber}
+                  dice={dice}
+                  rolls={rolls}
+                  setRolls={setRolls} 
+                />
+
+                <NoteButton />
+
+              </>
+            } />
+
+            <Route path='/About' element={<About />} />
+            
+            <Route path='/Notes' element={<NotePage setDice={setDice}/>} />
+          </Routes>
+        <Footer />
+      </div>
+    </Router>
+  )
 }
 
 export default App;
