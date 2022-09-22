@@ -8,14 +8,6 @@ Sectioned notes allow the user to save, read,
 easily access, and change stored data. Users can press Ctrl + F
 to use select browsers search feature and find notes faster.
 
-## To Run
-
-Install Node.js
-
-Windows: Run Install.bat and then users can run the program anytime with Start.bat. MacOS users navigate to the DM-Helper build folder in terminal and run <code>npm install serve</code> then users only need to write <code>serve -s build</code> anytime to run the program, then type the given url into an internet browser.
-
-To run the devolopment version on MacOS/Windows open a terminal/powershell and navigate the main project folder and run <code>npm i</code> then Windows users can just run the startDev.bat file and on MacOS users only need to run <code>npm run start</code>. After this if users wish to run the development version again they only need to run startDev.bat on Windows and <code>npm run start</code> on MacOS.
-
 ## To use
 
 # Rolling mechanic
