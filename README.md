@@ -8,7 +8,11 @@ Sectioned notes allow the user to save, read,
 easily access, and change stored data. Users can press Ctrl + F
 to use select browsers search feature and find notes faster.
 
-## To use
+## To Run
+   
+   Go to this link: https://calebcharris.github.io/DM-Helper/
+
+## Guide
 
 # Rolling mechanic
 
